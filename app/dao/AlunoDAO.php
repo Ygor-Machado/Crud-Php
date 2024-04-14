@@ -1,19 +1,19 @@
 <?php
 
-class UsuarioDAO implements UsuarioDAOInterface
+class AlunoDAO implements UsuarioDAOInterface
 {
-    public function create(Usuario $usuario)
+    public function create(Aluno $aluno)
     {
         try {
             $sql = 'INSERT INTO aluno (nome, sobrenome, idade, curso, sexo) VALUES (:nome, :sobrenome, :idade, :curso, :sexo)';
 
             $stmt = Conexao::getConexao()->prepare($sql);
 
-            $stmt->bindParam(':nome', $usuario->nome);
-            $stmt->bindParam(':sobrenome', $usuario->sobrenome);
-            $stmt->bindParam(':idade', $usuario->idade);
-            $stmt->bindParam(':curso', $usuario->curso);
-            $stmt->bindParam(':sexo', $usuario->sexo);
+            $stmt->bindParam(':nome', $aluno->nome);
+            $stmt->bindParam(':sobrenome', $aluno->sobrenome);
+            $stmt->bindParam(':idade', $aluno->idade);
+            $stmt->bindParam(':curso', $aluno->curso);
+            $stmt->bindParam(':sexo', $aluno->sexo);
 
             $stmt->execute();
 
@@ -33,7 +33,7 @@ class UsuarioDAO implements UsuarioDAOInterface
             $array_lista = array();
 
             foreach ($lista as $l) {
-                $array_lista[] = $this->listaUsuarios($l);
+                $array_lista[] = $this->listaAlunos($l);
             }
 
             return $array_lista;
@@ -54,7 +54,7 @@ public function findById($id)
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if ($row) {
-            return $this->listaUsuarios($row);
+            return $this->listaAlunos($row);
         } else {
             return null;
         }
@@ -63,7 +63,7 @@ public function findById($id)
     }
 }
 
-    public function update(Usuario $usuario)
+    public function update(Aluno $aluno)
     {
         try {
             $sql = "UPDATE aluno set
@@ -77,25 +77,25 @@ public function findById($id)
 
             $stmt = Conexao::getConexao()->prepare($sql);
 
-            $stmt->bindValue(":nome", $usuario->nome);
-            $stmt->bindValue(":sobrenome", $usuario->sobrenome);
-            $stmt->bindValue(":idade", $usuario->idade);
-            $stmt->bindValue(":sexo", $usuario->sexo);
-            $stmt->bindValue(":id", $usuario->id);
+            $stmt->bindValue(":nome", $aluno->nome);
+            $stmt->bindValue(":sobrenome", $aluno->sobrenome);
+            $stmt->bindValue(":idade", $aluno->idade);
+            $stmt->bindValue(":sexo", $aluno->sexo);
+            $stmt->bindValue(":id", $aluno->id);
 
             return $stmt->execute();
         } catch (\PDOException $e) {
-            throw new \PDOException($e->getMessage());;
+            throw new \PDOException($e->getMessage());
         }
     }
 
-    public function destroy(Usuario $usuario)
+    public function destroy(Aluno $aluno)
     {
         try {
             $sql = 'DELETE FROM aluno WHERE id = :id';
 
             $stmt = Conexao::getConexao()->prepare($sql);
-            $stmt->bindParam(':id', $usuario->id);
+            $stmt->bindParam(':id', $aluno->id);
 
             $stmt->execute();
         } catch (\PDOException $e) {
@@ -103,9 +103,9 @@ public function findById($id)
         }
     }
 
-    private function listaUsuarios($row)
+    private function listaAlunos($row)
     {
-        $usuario = new Usuario();
+        $usuario = new Aluno();
 
         $usuario->id = $row['id'];
         $usuario->nome = $row['nome'];

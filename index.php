@@ -24,19 +24,19 @@ require_once('app/templates/header.php');
                 </tr>
                 </thead>
                 <tbody>
-               <?php foreach ($usuariodao->read() as $usuario) : ?>
+               <?php foreach ($alunodao->read() as $aluno) : ?>
                         <tr>
-                            <td><?= $usuario->id ?></td>
-                            <td><?= $usuario->nome ?></td>
-                            <td><?= $usuario->sobrenome ?></td>
-                            <td><?= $usuario->idade ?></td>
-                            <td><?= $usuario->curso ?></td>
-                            <td><?= $usuario->sexo ?></td>
+                            <td><?= $aluno->id ?></td>
+                            <td><?= $aluno->nome ?></td>
+                            <td><?= $aluno->sobrenome ?></td>
+                            <td><?= $aluno->idade ?></td>
+                            <td><?= $aluno->curso ?></td>
+                            <td><?= $aluno->sexo ?></td>
                             <td class="text-center">
-                                <a href="editar.php?id=<?= $usuario->id ?>">
+                                <a href="editar.php?id=<?= $aluno->id ?>">
                                     <button class="btn btn-warning btn-sm" name="editar">Editar</button>
                                 </a>
-                                <a href="app/process/UsuarioProcess.php?excluir=<?= $usuario->id ?>">
+                                <a href="app/process/AlunoProcess.php?excluir=<?= $aluno->id ?>">
                                     <button class="btn  btn-danger btn-sm" type="button">Excluir</button>
                                 </a>
                             </td>

@@ -8,7 +8,7 @@
     </a>
 </section>
 
-<form action="app/process/UsuarioProcess.php" method="POST">
+<form action="app/process/AlunoProcess.php" method="POST">
     <div class="form-group">
         <label>Nome do Aluno:</label>
         <input type="text" class="form-control" name="nome">

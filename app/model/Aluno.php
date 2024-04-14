@@ -1,6 +1,6 @@
 <?php
 
-class Usuario
+class Aluno
 {
     public $id;
     public $nome;
@@ -12,9 +12,9 @@ class Usuario
 
 interface UsuarioDAOInterface
 {
-    public function create(Usuario $usuario);
+    public function create(Aluno $aluno);
     public function read();
-    public function update(Usuario $usuario);
-    public function destroy(Usuario $usuario);
+    public function update(Aluno $aluno);
+    public function destroy(Aluno $aluno);
     public function findById($id);
 }

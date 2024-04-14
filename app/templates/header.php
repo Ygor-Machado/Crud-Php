@@ -1,11 +1,11 @@
 <?php
     include_once "./app/conexao/Conexao.php";
-    include_once "./app/model/Usuario.php";
-    include_once "./app/dao/UsuarioDAO.php";
+    include_once "./app/model/Aluno.php";
+    include_once "./app/dao/AlunoDAO.php";
 
     // instanciar as classes
-    $usuario = new Usuario();
-    $usuariodao = new UsuarioDAO();
+    $aluno = new Aluno();
+    $alunodao = new AlunoDAO();
 ?>
 
 <!doctype html>
