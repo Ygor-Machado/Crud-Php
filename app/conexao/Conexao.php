@@ -1,6 +1,7 @@
 <?php
 class Conexao {
 
+
     public static $instance; // Variável estática para armazenar a instância da conexão
 
     private function __construct() {
@@ -8,6 +9,7 @@ class Conexao {
         // A conexão é estabelecida através do método estático getConexao()
     }
 
+    // Criação de um método estático para facilitar o acesso à conexão
     public static function getConexao() {
         // Método estático para obter a instância da conexão
         if (!isset(self::$instance)) { // Verifica se a conexão já foi estabelecida
