@@ -1,6 +1,6 @@
 <?php
 
-class UsuarioDAO
+class UsuarioDAO implements UsuarioDAOInterface
 {
     public function create(Usuario $usuario)
     {

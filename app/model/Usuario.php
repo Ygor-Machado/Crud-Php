@@ -9,3 +9,12 @@ class Usuario
     public $curso;
     public $sexo;
 }
+
+interface UsuarioDAOInterface
+{
+    public function create(Usuario $usuario);
+    public function read();
+    public function update(Usuario $usuario);
+    public function destroy(Usuario $usuario);
+    public function findById($id);
+}
