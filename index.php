@@ -1,12 +1,12 @@
 <?php
-    require_once('app/templates/header.php');
+require_once('app/templates/header.php');
 ?>
 
     <main>
 
         <section>
             <a href="cadastrar.php">
-                <button class="btn btn-success">Cadastrar Vaga</button>
+                <button class="btn btn-success">Cadastrar Aluno</button>
             </a>
         </section>
 

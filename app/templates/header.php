@@ -18,13 +18,13 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-    <title>Ygao Vagas</title>
+    <title>Ygao Cadastros</title>
 </head>
 <body class="bg-dark text-light">
 
 <div class="container">
     <div class="jumbotron bg-danger">
-        <h1>Ygao Vagas</h1>
+        <h1>Ygao Cadastros</h1>
         <p>Exemplo de crud para apresentar na sala</p>
     </div>
 
