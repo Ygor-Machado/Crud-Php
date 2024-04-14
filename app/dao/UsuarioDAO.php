@@ -17,8 +17,8 @@ class UsuarioDAO
 
             $stmt->execute();
 
-        } catch (\Exception $e) {
-            throw new \Exception($e->getMessage());
+        } catch (\PDOException $e) {
+            throw new \PDOException($e->getMessage());
         }
     }
 
@@ -37,8 +37,8 @@ class UsuarioDAO
             }
 
             return $array_lista;
-        } catch (\Exception $e) {
-            throw new \Exception($e->getMessage());
+        } catch (\PDOException $e) {
+            throw new \PDOException($e->getMessage());
         }
     }
 
@@ -58,8 +58,8 @@ public function findById($id)
         } else {
             return null;
         }
-    } catch (\Exception $e) {
-        throw new \Exception($e->getMessage());
+    } catch (\PDOException $e) {
+        throw new \PDOException($e->getMessage());
     }
 }
 
@@ -84,8 +84,8 @@ public function findById($id)
             $stmt->bindValue(":id", $usuario->id);
 
             return $stmt->execute();
-        } catch (Exception $e) {
-            print "Ocorreu um erro ao tentar fazer Update<br> $e <br>";
+        } catch (\PDOException $e) {
+            throw new \PDOException($e->getMessage());;
         }
     }
 
@@ -98,14 +98,15 @@ public function findById($id)
             $stmt->bindParam(':id', $usuario->id);
 
             $stmt->execute();
-        } catch (\Exception $e) {
-            throw new \Exception($e->getMessage());
+        } catch (\PDOException $e) {
+            throw new \PDOException($e->getMessage());
         }
     }
 
     private function listaUsuarios($row)
     {
         $usuario = new Usuario();
+
         $usuario->id = $row['id'];
         $usuario->nome = $row['nome'];
         $usuario->sobrenome = $row['sobrenome'];
