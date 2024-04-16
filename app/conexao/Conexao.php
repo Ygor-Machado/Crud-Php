@@ -19,9 +19,6 @@ class Conexao {
 
             // Define o tratamento de erros para lançar exceções em caso de erro
             self::$instance->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-            // Define o comportamento para valores nulos do tipo string no Oracle para serem tratados como strings vazias
-            self::$instance->setAttribute(PDO::ATTR_ORACLE_NULLS, PDO::NULL_EMPTY_STRING);
         }
 
         // Retorna a instância da conexão

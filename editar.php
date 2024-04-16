@@ -2,21 +2,24 @@
 // Incluir o cabeçalho
 require_once('app/templates/header.php');
 
-
+// Verifica se o parâmetro 'id' está presente na URL
 if(isset($_GET['id'])) {
+    // Obtém o ID do aluno da URL
     $id = $_GET['id'];
 
-    // Recupera os dados do usuário do banco de dados usando o ID
+    // Recupera os dados do aluno do banco de dados usando o ID
     $aluno = $alunodao->findById($id);
 
+    // Verifica se o aluno foi encontrado no banco de dados
     if(!$aluno) {
+        // Se o aluno não foi encontrado, redireciona para a página inicial
         header('Location: /');
     }
 }
 
 ?>
 
-<section>
+    <section>
     <a href="index.php">
         <button class="btn btn-success">Voltar</button>
     </a>
